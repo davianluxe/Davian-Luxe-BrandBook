@@ -1,30 +1,37 @@
-from reportlab.lib.pagesizes import A4
+from pathlib import Path
 from reportlab.pdfgen import canvas
-from reportlab.lib.colors import HexColor
+from reportlab.lib.pagesizes import A4
 
-pdf = canvas.Canvas("Davian_Luxe_BrandBook.pdf", pagesize=A4)
+# =====================================
+# CREAR ESTRUCTURA DEL PROYECTO
+# =====================================
 
-ancho, alto = A4
+carpetas = [
+    "assets",
+    "sections",
+    "output"
+]
 
-# Fondo blanco
-pdf.setFillColor(HexColor("#FFFFFF"))
-pdf.rect(0, 0, ancho, alto, fill=1)
+for carpeta in carpetas:
+    Path(carpeta).mkdir(exist_ok=True)
 
-# Título
-pdf.setFillColor(HexColor("#0B3D91"))
-pdf.setFont("Helvetica-Bold", 30)
-pdf.drawCentredString(ancho/2, 750, "DAVIAN LUXE")
+print("✅ Carpetas creadas correctamente.")
 
-# Subtítulo
-pdf.setFillColor(HexColor("#C9A227"))
+# =====================================
+# CREAR PDF
+# =====================================
+
+pdf = canvas.Canvas(
+    "output/Davian_Luxe_BrandBook.pdf",
+    pagesize=A4
+)
+
+pdf.setFont("Helvetica-Bold", 28)
+pdf.drawString(100, 780, "DAVIAN LUXE")
+
 pdf.setFont("Helvetica", 18)
-pdf.drawCentredString(ancho/2, 715, "Brand Book")
-
-# Eslogan
-pdf.setFillColor(HexColor("#444444"))
-pdf.setFont("Helvetica", 12)
-pdf.drawCentredString(ancho/2, 60, "Premium Living • Exclusive Life")
+pdf.drawString(100, 745, "Brand Book")
 
 pdf.save()
 
-print("Brand Book creado correctamente.")
+print("✅ PDF creado correctamente.")
