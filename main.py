@@ -8,6 +8,7 @@ from reportlab.lib.pagesizes import A4
 from utils import crear_carpetas
 from sections.portada import crear_portada
 from sections.historia import crear_historia
+from sections.mision import crear_mision
 from utils import crear_carpetas
 
 # Crear carpetas automáticamente
