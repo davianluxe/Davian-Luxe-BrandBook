@@ -7,6 +7,7 @@ from reportlab.lib.pagesizes import A4
 
 from utils import crear_carpetas
 from sections.portada import crear_portada
+from sections.historia import crear_historia
 from utils import crear_carpetas
 
 # Crear carpetas automáticamente
@@ -25,6 +26,8 @@ ANCHO, ALTO = A4
 # ============================
 
 crear_portada(pdf)
+
+crear_historia(pdf)
 
 pdf.save()
 
