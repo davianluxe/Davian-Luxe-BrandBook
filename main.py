@@ -10,7 +10,6 @@ from sections.portada import crear_portada
 from sections.historia import crear_historia
 from sections.mision import crear_mision
 from utils import crear_carpetas
-pdf.save()
 
 # Crear carpetas automáticamente
 crear_carpetas()
@@ -30,6 +29,8 @@ ANCHO, ALTO = A4
 crear_portada(pdf)
 
 crear_historia(pdf)
+
+crear_mision(pdf)
 
 pdf.save()
 
