@@ -6,7 +6,8 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 
 from utils import crear_carpetas
-from styles import titulo, subtitulo, parrafo
+from sections.portada import crear_portada
+from utils import crear_carpetas
 
 # Crear carpetas automáticamente
 crear_carpetas()
