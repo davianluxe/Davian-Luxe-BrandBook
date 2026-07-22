@@ -25,7 +25,6 @@ ANCHO, ALTO = A4
 # ============================
 
 crear_portada(pdf)
-)
 
 pdf.save()
 
