@@ -1,37 +1,41 @@
-from pathlib import Path
+# =====================================
+# MAIN - DAVIAN LUXE BRAND BOOK
+# =====================================
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 
-# =====================================
-# CREAR ESTRUCTURA DEL PROYECTO
-# =====================================
+from utils import crear_carpetas
+from styles import titulo, subtitulo, parrafo
 
-carpetas = [
-    "assets",
-    "sections",
-    "output"
-]
+# Crear carpetas automáticamente
+crear_carpetas()
 
-for carpeta in carpetas:
-    Path(carpeta).mkdir(exist_ok=True)
-
-print("✅ Carpetas creadas correctamente.")
-
-# =====================================
-# CREAR PDF
-# =====================================
-
+# Crear PDF
 pdf = canvas.Canvas(
     "output/Davian_Luxe_BrandBook.pdf",
     pagesize=A4
 )
 
-pdf.setFont("Helvetica-Bold", 28)
-pdf.drawString(100, 780, "DAVIAN LUXE")
+ANCHO, ALTO = A4
 
-pdf.setFont("Helvetica", 18)
-pdf.drawString(100, 745, "Brand Book")
+# ============================
+# PORTADA
+# ============================
+
+titulo(pdf, "DAVIAN LUXE", 760)
+
+subtitulo(pdf, "Brand Book", 725)
+
+parrafo(
+    pdf,
+    "Premium Living • Exclusive Life",
+    690
+)
 
 pdf.save()
 
-print("✅ PDF creado correctamente.")
+print("===================================")
+print("DAVIAN LUXE BRAND BOOK")
+print("PDF creado correctamente")
+print("===================================")
