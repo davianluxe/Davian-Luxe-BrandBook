@@ -11,19 +11,19 @@ pdf.setFillColor(HexColor("#FFFFFF"))
 pdf.rect(0, 0, ancho, alto, fill=1)
 
 # Título
-pdf.setFillColor(HexColor("#0B3D91"))  # Azul Rey
+pdf.setFillColor(HexColor("#0B3D91"))
 pdf.setFont("Helvetica-Bold", 30)
-pdf.drawCentredString(ancho / 2, 700, "DAVIAN LUXE")
+pdf.drawCentredString(ancho/2, 750, "DAVIAN LUXE")
 
 # Subtítulo
-pdf.setFillColor(HexColor("#C9A227"))  # Dorado
+pdf.setFillColor(HexColor("#C9A227"))
 pdf.setFont("Helvetica", 18)
-pdf.drawCentredString(ancho / 2, 665, "Brand Book")
+pdf.drawCentredString(ancho/2, 715, "Brand Book")
 
-# Pie de página
-pdf.setFillColor(HexColor("#555555"))
+# Eslogan
+pdf.setFillColor(HexColor("#444444"))
 pdf.setFont("Helvetica", 12)
-pdf.drawCentredString(ancho / 2, 50, "Premium Living • Exclusive Life")
+pdf.drawCentredString(ancho/2, 60, "Premium Living • Exclusive Life")
 
 pdf.save()
 
